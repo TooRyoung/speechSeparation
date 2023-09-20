@@ -1,0 +1,72 @@
+#### general settings
+name: Dual_Path_RNN
+use_tb_logger: true
+num_spks: 2
+#### datasets
+datasets:
+  train:
+    dataroot_mix: ./data/tr/tr_mix.scp
+    dataroot_targets: [./data/tr/tr_s1.scp, ./data/tr/tr_s2.scp]
+
+  val:
+    dataroot_mix: ./data/cv/cv_mix.scp
+    dataroot_targets: [./data/cv/cv_s1.scp, ./data/cv/cv_s2.scp]
+  
+  dataloader_setting:
+    shuffle: true
+    num_workers: 1  # per GPU
+    batch_size: 12
+  
+  audio_setting:
+    sample_rate: 44100
+    chunk_size: 600
+    least_size: 300
+    
+
+#### network structures
+Dual_Path_RNN:
+  in_channels: 256
+  out_channels: 64 
+  hidden_channels: 128
+  kernel_size: 2
+  rnn_type: LSTM
+  norm: ln
+  dropout: 0
+  bidirectional: true
+  num_layers: 6
+  K: 250
+  num_spks: 2
+
+#### training settings: learning rate scheme, loss
+train:
+  epoch: 50
+  early_stop: 2
+  path: ./Dual-Path-RNN/checkpoint
+  gpuid: [0]
+
+#### Optimizer settings
+optim:
+  name: Adam   ### Adam, RMSprop, SGD
+  lr: !!float 5e-4
+  momentum: 0
+  weight_decay: 0
+  clip_norm: 5
+
+#### scheduler settings
+scheduler:
+  min_lr: !!float 1e-8
+  patience: 2
+  factor: 0.5
+
+#### Resume training settings
+resume:
+  state: false
+  path: ./Dual-Path-RNN/checkpoint
+
+#### logger
+logger:
+  name: DPCL
+  path: ./Dual-Path-RNN/checkpoint
+  screen: true
+  tofile: true
+  print_freq: 1000
