@@ -3,7 +3,7 @@
 # 1.环境配置
 具体环境配置在requirement.txt文件中，使用以下命令来构建环境。
 ```shell
-pip install -r requirement.txt
+pip install -r requirements.txt
 ```
 其中torch的gpu版本的安装需要额外的驱动，在这里不再赘述，有需要可以上网自行查找。
 
