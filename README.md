@@ -1,6 +1,13 @@
 # DPRNN
 
-# 1.构建数据集
+# 1.环境配置
+具体环境配置在requirement.txt文件中，使用以下命令来构建环境。
+```shell
+pip install -r requirement.txt
+```
+其中torch的gpu版本的安装需要额外的驱动，在这里不再赘述，有需要可以上网自行查找。
+
+# 2.构建数据集
 
 ## 数据集文件夹结构
 ├── data       
@@ -35,13 +42,13 @@ python create_mix.py
 python create_scp.py
 ```
 
-# 2.训练
+# 3.训练
 训练所需的参数均在train.yml，可按需调整
 ```shell
 python train_rnn.py
 ```
 
-# 3.测试
+# 4.测试
 以下为单一文件测试，输出后的结果放在test/spk1和test/spk2下
 ```shell
 python dualrnn_test_wav.py
