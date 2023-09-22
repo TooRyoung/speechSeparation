@@ -31,22 +31,22 @@ pip install -r requirements.txt
 首先，重命名并清洗掉过短的单人音频文件。    
 注：应修改rename_file.py和clean_s1_s2.py中的文件夹目录。
 ```shell
-python rename_file.py
-python clean_s1_s2.py 
+python ./data_processing/rename_file.py
+python ./data_processing/clean_s1_s2.py 
 ```
 其次，生成混合音频，且整体只保留5s的音频。    
 注：应修改create_mix.py中的type属性。
 ```shell
-python create_mix.py
+python ./data_processing/create_mix.py
 ```
 同时，裁剪原有单人音频，保留和混合音频长度相同的5秒。    
 注：应修改cut_s1_s2.py中的文件夹目录。
 ```shell
-python cut_s1_s2.py
+python ./data_processing/cut_s1_s2.py
 ```
 最后，为训练集和验证集生成scp文件。
 ```shell
-python create_scp.py
+python ./data_processing/create_scp.py
 ```
 
 # 3.训练
