@@ -18,9 +18,9 @@ datasets:
     batch_size: 12
   
   audio_setting:
-    sample_rate: 44100
-    chunk_size: 600
-    least_size: 300
+    sample_rate: 16000
+    chunk_size: 32000
+    least_size: 16000
     
 
 #### network structures
@@ -40,7 +40,7 @@ Dual_Path_RNN:
 #### training settings: learning rate scheme, loss
 train:
   epoch: 50
-  early_stop: 2
+  early_stop: 4
   path: ./Dual-Path-RNN/checkpoint
   gpuid: [0]
 
