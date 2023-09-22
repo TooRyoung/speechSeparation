@@ -1,14 +1,12 @@
-import sys
 from torch.optim.lr_scheduler import ReduceLROnPlateau
 from torch.utils.data import DataLoader as Loader
-from Dataset import Datasets
-import model_rnn
-import set_logger
+from data_processing.Dataset import Datasets
+from model import model_rnn, trainer_Dual_RNN
+from log import set_logger
 import logging
 import option
 import argparse
 import torch
-import trainer_Dual_RNN
 
 
 def make_dataloader(opt):

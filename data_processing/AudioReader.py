@@ -1,7 +1,5 @@
-import sys
 import torchaudio
-import torch
-from util import handle_scp
+from utils.util import handle_scp
 
 
 def read_wav(fname, return_rate=False):
@@ -76,9 +74,3 @@ class AudioReader(object):
             raise KeyError("Missing utterance {}!".format(index))
 
         return self._load(index)
-
-
-if __name__ == "__main__":
-    r = AudioReader('/home/likai/data1/create_scp/cv_s2.scp')
-    index = 0
-    print(r[1])

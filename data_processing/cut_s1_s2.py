@@ -6,10 +6,10 @@ import torch
 desired_length_seconds = 5
 
 # 输入文件夹路径和输出文件夹路径
-input_folder_s1 = 'data\\tr\\s1'
-input_folder_s2 = 'data\\tr\\s2'
-output_folder_s1 = 'data\\tr\\s1_trimmed'
-output_folder_s2 = 'data\\tr\\s2_trimmed'
+input_folder_s1 = '..\\data\\tr\\s1'
+input_folder_s2 = '..\\data\\tr\\s2'
+output_folder_s1 = '..\\data\\tr\\s1_trimmed'
+output_folder_s2 = '..\\data\\tr\\s2_trimmed'
 
 # 创建输出文件夹（如果不存在）
 os.makedirs(output_folder_s1, exist_ok=True)

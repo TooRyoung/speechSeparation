@@ -1,12 +1,9 @@
-import sys
 import time
 import logging
-from set_logger import setup_logger
 from loss import Loss
 import torch
 import os
 import matplotlib.pyplot as plt
-from torch.nn.parallel import data_parallel
 
 
 def check_parameters(net):

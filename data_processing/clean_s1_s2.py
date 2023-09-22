@@ -3,7 +3,7 @@ import torchaudio
 from tqdm import tqdm
 
 # 设置音频文件夹路径
-data_dir = 'data'
+data_dir = '..\\data'
 # split_names = ['train', 'test']
 split_names = ['train']
 
