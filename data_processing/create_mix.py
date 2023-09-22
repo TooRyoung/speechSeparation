@@ -2,7 +2,7 @@ import os
 import torchaudio
 
 # 定义文件夹路径
-data_folder = "data"
+data_folder = "..\\data"
 type = 'tr'
 
 # 分别获取s1和s2文件夹下的音频文件列表

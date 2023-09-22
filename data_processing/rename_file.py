@@ -1,8 +1,8 @@
 import os
 
 # 指定音频文件所在的文件夹路径
-folders1_path = './data/tr/s1'
-folders2_path = './data/tr/s2'
+folders1_path = '../data/tr/s1'
+folders2_path = '../data/tr/s2'
 
 # 获取文件夹中所有的音频文件
 audios1_files = [f for f in os.listdir(folders1_path) if f.endswith('.wav')]

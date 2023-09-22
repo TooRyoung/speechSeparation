@@ -1,13 +1,11 @@
 import os
 import torch
-from AudioReader import AudioReader, write_wav, read_wav
+from data_processing.AudioReader import write_wav, read_wav
 import argparse
-from torch.nn.parallel import data_parallel
-from model_rnn import Dual_RNN_model
-from set_logger import setup_logger
+from model.model_rnn import Dual_RNN_model
+from log.set_logger import setup_logger
 import logging
-from option import parse
-import tqdm
+from option.option import parse
 
 
 class Separation():

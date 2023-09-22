@@ -1,8 +1,6 @@
 import torch.nn.functional as F
-import util
-import torch
+from utils import util
 import torchaudio
-import sys
 
 
 def read_wav(fname, return_rate=False):
@@ -77,10 +75,3 @@ class AudioReader(object):
                         break
                     self.audio.append(utt[start:start+self.chunk_size])
                     start += self.least_size
-
-
-
-if __name__ == "__main__":
-    a = AudioReader("/home/likai/data1/create_scp/cv_mix.scp")
-    audio = a.audio
-    print(len(audio))
